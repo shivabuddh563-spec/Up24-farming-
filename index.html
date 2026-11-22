@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP 24 Farming | Dipanshu Shakya - Official Creator & Brand Collab Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #07110a;
+            color: #f3f7f4;
+            overflow-x: hidden;
+        }
+        .font-display {
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 0.04em;
+        }
+        /* Farming Green & Wheat Gold Shimmer */
+        .agri-shimmer {
+            background: linear-gradient(90deg, #22c55e 0%, #facc15 30%, #4ade80 60%, #eab308 85%, #22c55e 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3.5s linear infinite;
+        }
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+        .agri-btn {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            transition: all 0.3s ease;
+        }
+        .agri-btn:hover {
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.55);
+            transform: translateY(-2px);
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.5);
+            transform: translateY(-2px);
+        }
+        /* Ken Burns Tractor Field Zoom */
+        .ken-burns {
+            animation: kenBurns 16s ease-in-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.13) translate(-1%, -1%); }
+        }
+        /* Glass Cards with 3D Hover */
+        .agri-card {
+            background: rgba(13, 28, 18, 0.85);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            backdrop-filter: blur(12px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .agri-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(250, 204, 21, 0.7);
+            box-shadow: 0 20px 40px -15px rgba(34, 197, 94, 0.3);
+        }
+        /* Floating Golden Wheat / Fireflies */
+        .spark {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fde047 0%, transparent 70%);
+            pointer-events: none;
+            animation: floatSpark linear infinite;
+        }
+        @keyframes floatSpark {
+            0% { transform: translateY(100vh) scale(0.4); opacity: 0; }
+            25% { opacity: 0.85; }
+            75% { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #07110a;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .tractor-pulse {
+            animation: pulseBounce 1.2s infinite ease-in-out;
+        }
+        @keyframes pulseBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-green-500 selection:text-black">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="w-16 h-16 rounded-full bg-green-500/15 border-2 border-green-400 flex items-center justify-center text-yellow-400 text-3xl tractor-pulse mb-3">
+            <i class="fa-solid fa-tractor"></i>
+        </div>
+        <h2 class="font-display text-3xl tracking-widest agri-shimmer font-bold">UP 24 FARMING</h2>
+        <p class="text-[11px] text-green-300/70 tracking-[0.25em] uppercase">Proud To Be Farmer</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#07110a]/85 backdrop-blur-md border-b border-green-500/20">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-yellow-500 p-0.5">
+                    <div class="w-full h-full rounded-full bg-[#07110a] flex items-center justify-center text-green-400">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-display text-2xl font-bold agri-shimmer leading-none">UP 24 FARMING</h1>
+                    <p class="text-[10px] text-green-300/70 tracking-widest uppercase">Dipanshu Shakya</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex space-x-7 text-sm font-medium text-stone-300">
+                <a href="#reach" class="hover:text-yellow-400 transition">Audience Reach</a>
+                <a href="#packages" class="hover:text-yellow-400 transition">Brand Collab</a>
+                <a href="#content" class="hover:text-yellow-400 transition">Content Niche</a>
+                <a href="#collab" class="hover:text-yellow-400 transition">Book Promotion</a>
+            </div>
+
+            <a href="https://wa.me/918958047669?text=Hello%20Dipanshu%20Bhai%2C%20mujhe%20UP%2024%20Farming%20par%20Brand%20Promotion%20karwana%20hai." target="_blank" class="gold-btn text-stone-950 font-bold text-xs md:text-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i> Paid Collab
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1600&q=80" alt="Tractor Farming Field" class="w-full h-full object-cover opacity-35 ken-burns">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#07110a]/85 via-[#07110a]/60 to-[#07110a]"></div>
+        </div>
+
+        <!-- Floating Sparks -->
+        <div id="sparks-container" class="absolute inset-0 z-0 overflow-hidden pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            <div data-aos="fade-down" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-400/40 bg-green-500/10 text-yellow-300 text-xs font-bold tracking-widest uppercase">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                Brand Promotions • Paid Collab Open
+            </div>
+
+            <h1 data-aos="zoom-in" data-aos-duration="1000" class="font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-none">
+                UP 24 <span class="agri-shimmer">FARMING</span>
+            </h1>
+
+            <p data-aos="fade-up" data-aos-delay="150" class="text-lg md:text-2xl font-bold text-yellow-400">
+                "जो किसान का नहीं, वो हिन्दुस्तान का नहीं" 🌾🚜
+            </p>
+
+            <p data-aos="fade-up" data-aos-delay="300" class="text-stone-300 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Creator: <span class="text-white font-semibold">Dipanshu Shakya</span> — उत्तर प्रदेश का तेज़ी से उभरता एग्रीकल्चर, ट्रैक्टर रिव्यू और देसी किसान डिजिटल प्लेटफॉर्म।
+            </p>
+
+            <!-- Social Platforms Strip -->
+            <div data-aos="fade-up" data-aos-delay="400" class="flex flex-wrap items-center justify-center gap-3 text-xs">
+                <span class="px-3.5 py-1.5 rounded-full bg-green-950/90 border border-green-500/30 text-green-300">
+                    <i class="fa-brands fa-instagram text-pink-400 mr-1"></i> @up_24_farming_ (66.1K+)
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-green-950/90 border border-green-500/30 text-green-300">
+                    <i class="fa-brands fa-facebook text-blue-400 mr-1"></i> Up 24_farming
+                </span>
+                <span class="px-3.5 py-1.5 rounded-full bg-green-950/90 border border-green-500/30 text-green-300">
+                    <i class="fa-brands fa-youtube text-red-500 mr-1"></i> YouTube Creator
+                </span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div data-aos="fade-up" data-aos-delay="500" class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3">
+                <a href="#collab" class="w-full sm:w-auto gold-btn text-stone-950 font-extrabold px-8 py-4 rounded-xl shadow-xl flex items-center justify-center gap-2 text-sm md:text-base">
+                    <i class="fa-solid fa-handshake text-lg"></i> Book Paid Brand Promotion
+                </a>
+                <a href="https://instagram.com/up_24_farming_" target="_blank" class="w-full sm:w-auto agri-btn text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 text-sm md:text-base">
+                    <i class="fa-brands fa-instagram text-xl"></i> View Instagram Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Stats Counter -->
+    <section id="reach" class="py-12 px-4 border-y border-green-500/20 bg-gradient-to-r from-[#07110a] via-[#0d2214] to-[#07110a]">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="0">
+                <div class="font-display text-4xl md:text-5xl font-bold agri-shimmer counter" data-target="66" data-suffix="K+">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Instagram Followers</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="font-display text-4xl md:text-5xl font-bold agri-shimmer counter" data-target="2300" data-suffix="+">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Agri Posts & Reels</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="font-display text-4xl md:text-5xl font-bold agri-shimmer counter" data-target="100" data-suffix="%">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Farmer & Rural Audience</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <div class="font-display text-4xl md:text-5xl font-bold agri-shimmer counter" data-target="50" data-suffix="+">0</div>
+                <p class="text-xs md:text-sm text-stone-400 mt-1">Brand Collaborations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Collaboration Packages -->
+    <section id="packages" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-14" data-aos="fade-up">
+            <span class="text-yellow-400 text-xs font-bold tracking-[0.25em] uppercase">Grow Your Agri Brand</span>
+            <h2 class="font-display text-4xl md:text-6xl font-bold agri-shimmer mt-1">Brand Promotion & Collab</h2>
+            <p class="text-stone-400 mt-2 text-sm md:text-base max-w-xl mx-auto">अपने ट्रैक्टर, कृषि यंत्र, खाद-बीज या एग्री-ऐप को सीधे हज़ारों किसानों तक पहुंचाएं</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Package 1 -->
+            <div data-aos="fade-up" data-aos-delay="100" class="agri-card rounded-2xl p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-green-500/15 border border-green-500/30 flex items-center justify-center text-green-400 text-2xl mb-4">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Most Popular</span>
+                    <h3 class="font-display text-3xl font-bold text-white mt-1">Dedicated Reel Promotion</h3>
+                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
+                        आपके प्रोडक्ट, ट्रैक्टर या शोरूम का हाई-क्वालिटी देसी स्टाइल वीडियो रिव्यू और कॉलैब पोस्ट सीधा 66K+ ऑडियंस के सामने।
+                    </p>
+                </div>
+                <a href="#collab" class="mt-6 block text-center agri-btn text-white font-bold py-3 rounded-xl text-sm">
+                    Inquire Reel Rate →
+                </a>
+            </div>
+
+            <!-- Package 2 -->
+            <div data-aos="fade-up" data-aos-delay="250" class="agri-card rounded-2xl p-7 flex flex-col justify-between border-yellow-400/50">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/15 border border-yellow-500/30 flex items-center justify-center text-yellow-400 text-2xl mb-4">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Maximum Reach</span>
+                    <h3 class="font-display text-3xl font-bold text-white mt-1">Combo Multi-Platform</h3>
+                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
+                        Instagram Reel + Instagram Story (Direct Link के साथ) + Facebook Page शेयरिंग। ऐप डाउनलोड और लीड जनरेशन के लिए बेस्ट।
+                    </p>
+                </div>
+                <a href="#collab" class="mt-6 block text-center gold-btn text-stone-950 font-extrabold py-3 rounded-xl text-sm">
+                    Book Combo Campaign →
+                </a>
+            </div>
+
+            <!-- Package 3 -->
+            <div data-aos="fade-up" data-aos-delay="400" class="agri-card rounded-2xl p-7 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-green-500/15 border border-green-500/30 flex items-center justify-center text-green-400 text-2xl mb-4">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Quick Traffic</span>
+                    <h3 class="font-display text-3xl font-bold text-white mt-1">Story + Bio Link Mention</h3>
+                    <p class="text-stone-400 text-sm mt-3 leading-relaxed">
+                        24 घंटे की स्टोरी प्रमोशन, स्वाइप-अप/क्लिक लिंक और ब्रांड टैगिंग — नए ऑफर्स, डीलरशिप या YouTube वीडियो प्रमोट करने के लिए।
+                    </p>
+                </div>
+                <a href="#collab" class="mt-6 block text-center agri-btn text-white font-bold py-3 rounded-xl text-sm">
+                    Book Story Promo →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Niche Showcase -->
+    <section id="content" class="py-16 px-4 bg-[#0a180f] border-y border-green-500/15">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-green-400 text-xs font-bold tracking-[0.25em] uppercase">What We Create</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold agri-shimmer mt-1">Farming & Tractor Content</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div data-aos="zoom-in" data-aos-delay="0" class="rounded-2xl overflow-hidden h-52 relative border border-green-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=600&q=80" alt="Heavy Tractors" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="font-bold text-sm text-yellow-300">Tractor Reviews</span>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100" class="rounded-2xl overflow-hidden h-52 relative border border-green-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80" alt="Crop Farming" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="font-bold text-sm text-yellow-300">Crop & Seed Tips</span>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200" class="rounded-2xl overflow-hidden h-52 relative border border-green-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Modern Agri Tech" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="font-bold text-sm text-yellow-300">Agri Machinery</span>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300" class="rounded-2xl overflow-hidden h-52 relative border border-green-500/20 group">
+                    <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" alt="Village Vlogs" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                        <span class="font-bold text-sm text-yellow-300">Desi Kisan Vlogs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paid Collab Booking Form -->
+    <section id="collab" class="py-20 px-4 max-w-3xl mx-auto">
+        <div data-aos="fade-up" class="agri-card rounded-3xl p-6 md:p-10 shadow-2xl">
+            <div class="text-center mb-8">
+                <span class="text-yellow-400 text-xs font-bold tracking-[0.2em] uppercase">Direct Creator Desk</span>
+                <h2 class="font-display text-3xl md:text-5xl font-bold agri-shimmer mt-1">Start a Brand Collaboration</h2>
+                <p class="text-stone-400 text-sm mt-2">डिटेल्स भरें — आपकी रिक्वेस्ट सीधे Dipanshu Shakya के WhatsApp पर खुलेगी</p>
+            </div>
+
+            <form id="collabForm" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs text-green-300/80 mb-1.5">आपका नाम / ब्रांड का नाम *</label>
+                        <input type="text" id="brandName" required placeholder="उदा. Swaraj Agency / Agri App" class="w-full bg-[#050d07] border border-green-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-400 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-green-300/80 mb-1.5">मोबाइल / WhatsApp नंबर *</label>
+                        <input type="tel" id="brandPhone" required placeholder="10 अंकों का नंबर" class="w-full bg-[#050d07] border border-green-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-400 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-green-300/80 mb-1.5">प्रमोशन पैकेज चुनें *</label>
+                    <select id="promoType" class="w-full bg-[#050d07] border border-green-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-400 transition">
+                        <option value="Dedicated Instagram Reel">Dedicated Instagram Reel Promotion</option>
+                        <option value="Combo (Reel + Story + Facebook)">Combo Campaign (Reel + Story + Facebook)</option>
+                        <option value="Instagram Story + Link">Instagram Story + Link Mention</option>
+                        <option value="Showroom / On-Field Visit">Showroom / Tractor Agency Visit</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs text-green-300/80 mb-1.5">प्रोडक्ट या कैंपेन की जानकारी</label>
+                    <textarea id="campaignNotes" rows="2" placeholder="अपने प्रोडक्ट, ऐप या प्रमोशन के बारे में संक्षिप्त जानकारी लिखें..." class="w-full bg-[#050d07] border border-green-500/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-400 transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full gold-btn text-stone-950 font-extrabold py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 text-base cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Send Collab Inquiry on WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#040905] border-t border-green-500/20 pt-12 pb-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 mb-8 text-center md:text-left">
+            <div>
+                <h3 class="font-display text-3xl font-bold agri-shimmer">UP 24 FARMING</h3>
+                <p class="text-stone-400 text-sm">Dipanshu Shakya • Proud To Be Farmer 🌾🚜</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <a href="tel:8958047669" class="px-4 py-2 rounded-full bg-green-950 border border-green-500/30 text-green-300 hover:border-yellow-400 transition">
+                    <i class="fa-solid fa-phone mr-1.5"></i> +91 89580 47669
+                </a>
+                <a href="https://instagram.com/up_24_farming_" target="_blank" class="px-4 py-2 rounded-full bg-green-950 border border-green-500/30 text-pink-300 hover:border-yellow-400 transition">
+                    <i class="fa-brands fa-instagram mr-1.5"></i> @up_24_farming_
+                </a>
+            </div>
+        </div>
+
+        <div class="border-t border-stone-800/80 pt-6 text-center text-xs text-stone-500">
+            <p>© 2026 UP 24 Farming (Dipanshu Shakya). All Rights Reserved.</p>
+            <p class="mt-1 text-stone-600">Website Designed by <span class="text-green-400/80 font-semibold">SHIVA Digital Services</span></p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918958047669?text=Hello%20Dipanshu%20Bhai%2C%20I%20want%20to%20discuss%20a%20Paid%20Collab%20on%20UP%2024%20Farming." target="_blank" class="fixed bottom-5 right-5 z-50 bg-green-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 600);
+            AOS.init({ once: true, offset: 60 });
+        });
+
+        // Floating Golden Sparks
+        const sparksContainer = document.getElementById('sparks-container');
+        for (let i = 0; i < 22; i++) {
+            const s = document.createElement('div');
+            s.classList.add('spark');
+            const size = Math.random() * 5 + 3 + 'px';
+            s.style.width = size;
+            s.style.height = size;
+            s.style.left = Math.random() * 100 + '%';
+            s.style.animationDuration = (Math.random() * 10 + 7) + 's';
+            s.style.animationDelay = (Math.random() * 5) + 's';
+            sparksContainer.appendChild(s);
+        }
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.counter');
+        let counted = false;
+        window.addEventListener('scroll', () => {
+            const reachSection = document.getElementById('reach');
+            if (!counted && reachSection.getBoundingClientRect().top < window.innerHeight - 50) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix') || '+';
+                    const increment = target / 45;
+                    let current = 0;
+                    const update = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current) + suffix;
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.innerText = target + suffix;
+                        }
+                    };
+                    update();
+                });
+                counted = true;
+            }
+        });
+
+        // WhatsApp Form Submission
+        document.getElementById('collabForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const brand = document.getElementById('brandName').value;
+            const phone = document.getElementById('brandPhone').value;
+            const promo = document.getElementById('promoType').value;
+            const notes = document.getElementById('campaignNotes').value;
+
+            const msg = `*Paid Collab Inquiry - UP 24 Farming*%0A%0A` +
+                        `*Brand / Name:* ${brand}%0A` +
+                        `*Contact:* ${phone}%0A` +
+                        `*Package:* ${promo}%0A` +
+                        `*Details:* ${notes || 'N/A'}`;
+
+            window.open(`https://wa.me/918958047669?text=${msg}`, '_blank');
+        });
+    </script>
+</body>
+</html>
